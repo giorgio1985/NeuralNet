@@ -11,19 +11,22 @@ using std::cout;
 using std::endl;
 
 vector<float> X {
-    7.1, 3.5, 1.4, 0.2,
-    4.9, 3.0, 1.4, 0.2,
-    6.2, 3.4, 5.4, 2.3,
-    5.9, 3.0, 5.1, 1.8
+    5.1, 1.5, 1.4, 0.2,
+    4.9, 3.0, 1.4, 0.2, 
+    6.2, 3.4, 5.4, 2.3, 
+    5.9, 3.0, 5.1, 1.8, 
+    5.3, 0.5, 1.2, 1.1,
 };
 
 vector<float> y {
-    0,
-    0,
+    1,
+    1,
+    1,
     1,
     1 };
 
 vector<float> W {
+    0.5,
     0.5,
     0.5,
     0.5,
@@ -182,7 +185,7 @@ void print ( const vector <float>& m, int n_rows, int n_columns ) {
     
     for( int i = 0; i != n_rows; ++i ) {
         for( int j = 0; j != n_columns; ++j ) {
-            cout << m[ i * n_columns + j ] << " ";
+            cout << m[ i * n_columns + j ] << "\n";
         }
         cout << '\n';
     }
@@ -201,7 +204,7 @@ int main(int argc, const char * argv[]) {
         W = W + W_delta;
         
         if (i == 49){
-            print ( pred, 4, 1 );
+            print ( pred, 1, 1 );
         };
     };
 
